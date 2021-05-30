@@ -22,6 +22,18 @@ private:
 	Node *Head = NULL;
 public:
 
+	~LStack(){
+		Node *nd = new Node();
+
+		if (Head != NULL){
+			while (Head){
+				nd = Head;
+				Head = nd->next;
+				free(nd);
+			}
+		}
+	}
+
 	//This is used to tell us if the stack is empty
 	bool isEmpty(){
 		return Head == NULL;
